@@ -5,3 +5,6 @@ export const stores = {
 }
 
 export type Stores = typeof stores
+
+// custom injection type to reduce boilerplate
+export type StoreInjector<Props> = (stores: Stores, props: Props) => Partial<Props>

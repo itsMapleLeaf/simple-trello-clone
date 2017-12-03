@@ -2,7 +2,7 @@ import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { BoardModel } from '../models/BoardModel'
-import { Stores } from '../stores'
+import { StoreInjector } from '../stores'
 
 type BoardRouteMatch = { id: string }
 
@@ -10,7 +10,7 @@ type Props = RouteComponentProps<BoardRouteMatch> & {
   board?: BoardModel
 }
 
-function storesToProps(stores: Stores, props: Props): Partial<Props> {
+const storesToProps: StoreInjector<Props> = (stores, props) => {
   const board = stores.boardStore.boards.get(props.match.params.id)
   return { board }
 }
