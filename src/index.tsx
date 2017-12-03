@@ -1,7 +1,7 @@
 import 'sanitize.css/sanitize.css'
 
 import { useStrict } from 'mobx'
-import { Provider } from 'mobx-react'
+import { Provider as StoreProvider } from 'mobx-react'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { App } from './components/App'
@@ -11,9 +11,9 @@ import { applyGlobalStyles } from './styles/globalStyles'
 
 function render() {
   const root = (
-    <Provider {...stores}>
+    <StoreProvider {...stores}>
       <App />
-    </Provider>
+    </StoreProvider>
   )
 
   ReactDOM.render(root, document.getElementById('root') as HTMLElement)
