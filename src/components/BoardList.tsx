@@ -55,7 +55,7 @@ const BoardNew = styled.a`
 
 type BoardListProps = {
   boards: BoardModel[]
-  onNewBoard: () => void
+  onNewBoard?: () => void
 }
 
 @observer
@@ -71,7 +71,7 @@ class BoardList extends React.Component<BoardListProps> {
 
   renderBoard = (board: BoardModel) => (
     <Board to={`/board/${board.id}`} key={board.id}>
-      {board.title}
+      <h2>{board.title}</h2>
     </Board>
   )
 }

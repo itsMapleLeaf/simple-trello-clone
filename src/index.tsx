@@ -1,38 +1,43 @@
 import 'sanitize.css/sanitize.css'
 
 import { useStrict } from 'mobx'
+import { Provider } from 'mobx-react'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
-import BoardStore from './stores/BoardStore'
+import stores from './stores'
 import applyGlobalStyles from './styles/globalStyles'
 
-let store = new BoardStore()
-
 function render() {
-  const root = <App store={store} />
+  const root = (
+    <Provider {...stores}>
+      <App />
+    </Provider>
+  )
 
   ReactDOM.render(root, document.getElementById('root') as HTMLElement)
 }
 
 async function main() {
-  store.createBoard('board1')
-  store.createBoard('board2')
-  store.createBoard('board3')
+  await Promise.all([
+    stores.boardStore.createBoard('board1'),
+    stores.boardStore.createBoard('board2'),
+    stores.boardStore.createBoard('board3'),
+  ])
 
   useStrict(true)
   render()
   registerServiceWorker()
   applyGlobalStyles()
 
-  if (process.env.NODE_ENV === 'production') return
+  if (process.env.NODE_ENV !== 'production') {
+    if (module.hot) {
+      module.hot.accept('./components/App', render)
+    }
 
-  if (module.hot) {
-    module.hot.accept(render)
+    ;(window as any).stores = stores
   }
-
-  ;(window as any).store = store
 }
 
 main().catch(console.error)

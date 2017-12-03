@@ -1,24 +1,31 @@
-import { ObservableMap } from 'mobx'
-import { observer } from 'mobx-react'
+import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import BoardModel from '../models/BoardModel'
+import { Stores } from '../stores'
 import BoardList from './BoardList'
 
 type Props = {
-  boards: ObservableMap<BoardModel>
+  boards?: BoardModel[]
+  onNewBoard?: () => void
 }
 
+function storesToProps(stores: Stores): Partial<Props> {
+  return {
+    boards: stores.boardStore.boards.values(),
+
+    async onNewBoard() {
+      const title = prompt('Board title?')
+      if (title) {
+        await stores.boardStore.createBoard(title)
+      }
+    },
+  }
+}
+
+@inject(storesToProps)
 @observer
-class BoardListRoute extends React.Component<Props> {
+export default class BoardListRoute extends React.Component<Props> {
   render() {
-    const boards = this.props.boards.values()
-    const sortedBoards = boards.slice().sort((a, b) => a.title.localeCompare(b.title))
-    return <BoardList boards={sortedBoards} onNewBoard={this.handleNewBoard} />
-  }
-
-  private handleNewBoard = () => {
-    // TODO
+    return <BoardList boards={this.props.boards || []} onNewBoard={this.props.onNewBoard} />
   }
 }
-
-export default BoardListRoute
