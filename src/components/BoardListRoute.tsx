@@ -13,9 +13,9 @@ const storesToProps: StoreInjector<Props> = stores => ({
   boards: stores.boardStore.boards.values(),
 
   async onNewBoard() {
-    const title = prompt('Board title?')
-    if (title) {
-      await stores.boardStore.createBoard(title)
+    const name = prompt('Board name?')
+    if (name) {
+      await stores.boardStore.createBoard(name)
     }
   },
 })

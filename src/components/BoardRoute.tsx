@@ -21,7 +21,7 @@ export class BoardRoute extends React.Component<Props> {
   render() {
     const { board } = this.props
     if (board) {
-      return <h1>{board.title}</h1>
+      return <h1>{board.name}</h1>
     }
     return <h1>board not found</h1>
   }

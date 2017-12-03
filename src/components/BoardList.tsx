@@ -71,7 +71,7 @@ export class BoardList extends React.Component<BoardListProps> {
 
   renderBoard = (board: BoardModel) => (
     <Board to={`/board/${board.id}`} key={board.id}>
-      <h2>{board.title}</h2>
+      <h2>{board.name}</h2>
     </Board>
   )
 }
