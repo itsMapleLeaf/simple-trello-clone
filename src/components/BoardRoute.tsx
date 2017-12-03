@@ -1,7 +1,7 @@
 import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import { RouteComponentProps } from 'react-router'
-import BoardModel from '../models/BoardModel'
+import { BoardModel } from '../models/BoardModel'
 import { Stores } from '../stores'
 
 type BoardRouteMatch = { id: string }
@@ -17,7 +17,7 @@ function storesToProps(stores: Stores, props: Props): Partial<Props> {
 
 @inject(storesToProps)
 @observer
-export default class BoardRoute extends React.Component<Props> {
+export class BoardRoute extends React.Component<Props> {
   render() {
     const { board } = this.props
     if (board) {

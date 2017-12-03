@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { BrowserRouter, Link, Redirect, Route } from 'react-router-dom'
 import styled, { css } from 'styled-components'
-import BoardListRoute from './BoardListRoute'
-import BoardRoute from './BoardRoute'
+import { BoardListRoute } from './BoardListRoute'
+import { BoardRoute } from './BoardRoute'
 
 const shadedSection = css`
   background-color: #2c3e50;
@@ -28,7 +28,7 @@ const Footer = styled.footer`
   ${shadedSection};
 `
 
-export default class App extends React.Component {
+export class App extends React.Component {
   render() {
     return (
       <BrowserRouter>

@@ -8,7 +8,7 @@ function randomBytes(num: number) {
   })
 }
 
-export default async function generateRandomId() {
+export async function generateRandomId() {
   const buffer = await randomBytes(8)
   return buffer.toString('hex')
 }

@@ -1,6 +1,6 @@
 import { injectGlobal } from 'styled-components'
 
-function applyGlobalStyles() {
+export function applyGlobalStyles() {
   injectGlobal`
     body {
       margin: 0;
@@ -20,5 +20,3 @@ function applyGlobalStyles() {
     }
   `
 }
-
-export default applyGlobalStyles

@@ -2,7 +2,7 @@ import { observer } from 'mobx-react'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
-import BoardModel from '../models/BoardModel'
+import { BoardModel } from '../models/BoardModel'
 
 const Container = styled.section`
   list-style: none;
@@ -59,7 +59,7 @@ type BoardListProps = {
 }
 
 @observer
-class BoardList extends React.Component<BoardListProps> {
+export class BoardList extends React.Component<BoardListProps> {
   render() {
     return (
       <Container>
@@ -75,5 +75,3 @@ class BoardList extends React.Component<BoardListProps> {
     </Board>
   )
 }
-
-export default BoardList

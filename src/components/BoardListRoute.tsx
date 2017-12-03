@@ -1,8 +1,8 @@
 import { inject, observer } from 'mobx-react'
 import * as React from 'react'
-import BoardModel from '../models/BoardModel'
+import { BoardModel } from '../models/BoardModel'
 import { Stores } from '../stores'
-import BoardList from './BoardList'
+import { BoardList } from './BoardList'
 
 type Props = {
   boards?: BoardModel[]
@@ -24,7 +24,7 @@ function storesToProps(stores: Stores): Partial<Props> {
 
 @inject(storesToProps)
 @observer
-export default class BoardListRoute extends React.Component<Props> {
+export class BoardListRoute extends React.Component<Props> {
   render() {
     return <BoardList boards={this.props.boards || []} onNewBoard={this.props.onNewBoard} />
   }

@@ -1,8 +1,7 @@
-import BoardStore from './stores/BoardStore'
+import { BoardStore } from './stores/BoardStore'
 
-const stores = {
+export const stores = {
   boardStore: new BoardStore(),
 }
 
-export default stores
 export type Stores = typeof stores

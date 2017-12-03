@@ -1,3 +1,3 @@
-export default class TaskModel {
+export class TaskModel {
   constructor(public text: string) {}
 }

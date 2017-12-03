@@ -1,8 +1,8 @@
 import { action, observable } from 'mobx'
-import generateRandomId from '../helpers/generateRandomId'
-import BoardModel from '../models/BoardModel'
+import { generateRandomId } from '../helpers/generateRandomId'
+import { BoardModel } from '../models/BoardModel'
 
-export default class BoardStore {
+export class BoardStore {
   boards = observable.map<BoardModel>()
 
   @action

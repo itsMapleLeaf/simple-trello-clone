@@ -4,10 +4,10 @@ import { useStrict } from 'mobx'
 import { Provider } from 'mobx-react'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import App from './components/App'
-import registerServiceWorker from './registerServiceWorker'
-import stores from './stores'
-import applyGlobalStyles from './styles/globalStyles'
+import { App } from './components/App'
+import { registerServiceWorker } from './registerServiceWorker'
+import { stores } from './stores'
+import { applyGlobalStyles } from './styles/globalStyles'
 
 function render() {
   const root = (

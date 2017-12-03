@@ -1,5 +1,5 @@
-import TaskModel from './TaskModel'
+import { TaskModel } from './TaskModel'
 
-export default class ListModel {
+export class ListModel {
   tasks = [] as TaskModel[]
 }
