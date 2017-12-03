@@ -1,0 +1,8 @@
+{
+  "defaultSeverity": "warning",
+  "extends": ["tslint-react", "tslint-config-standard", "tslint-config-prettier"],
+  "rules": {
+    "no-empty": false,
+    "ordered-imports": true
+  }
+}
