@@ -2,7 +2,7 @@ import { action, observable } from 'mobx'
 import { generateRandomId } from '../helpers/generateRandomId'
 import { TaskModel } from './TaskModel'
 
-export class ListModel {
+export class TaskListModel {
   @observable tasks = [] as TaskModel[]
 
   constructor(public id: string, public name: string) {}

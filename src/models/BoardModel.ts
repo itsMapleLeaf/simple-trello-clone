@@ -1,14 +1,14 @@
 import { action, observable } from 'mobx'
 import { generateRandomId } from '../helpers/generateRandomId'
-import { ListModel } from './ListModel'
+import { TaskListModel } from './TaskListModel'
 
 export class BoardModel {
-  @observable lists = [] as ListModel[]
+  @observable lists = [] as TaskListModel[]
 
   constructor(public id: string, public name: string) {}
 
   @action
-  addList(list: ListModel) {
+  addList(list: TaskListModel) {
     this.lists.push(list)
   }
 
@@ -19,7 +19,7 @@ export class BoardModel {
 
   async createList(name: string) {
     const id = await generateRandomId()
-    const list = new ListModel(id, name)
+    const list = new TaskListModel(id, name)
     this.addList(list)
     return list
   }

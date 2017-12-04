@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ListModel } from '../../models/ListModel'
+import { ListModel } from '../../models/TaskListModel'
 import { Task } from '../Task'
 import { Container, Tasks, Title } from './styles'
 
