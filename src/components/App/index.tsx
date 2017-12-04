@@ -1,14 +1,9 @@
 import * as React from 'react'
 import { BrowserRouter, Link, Redirect, Route } from 'react-router-dom'
-import styled, { css } from 'styled-components'
-import { BoardListRoute } from './BoardListRoute'
-import { BoardRoute } from './BoardRoute'
-
-const shadedSection = css`
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  padding: 1rem;
-`
+import styled from 'styled-components'
+import { BoardListRoute } from '../BoardListRoute'
+import { BoardRoute } from '../BoardRoute'
+import { shadedSection } from './styles'
 
 const Container = styled.main`
   min-height: 100vh;
