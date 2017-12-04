@@ -1,12 +1,15 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
-  list-style: none;
-  padding: 0.5rem;
-  margin: 0;
+const elementSpacing = '0.5rem'
 
+export const Container = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+
+  padding: ${elementSpacing};
+  > * {
+    margin: ${elementSpacing};
+  }
 `
