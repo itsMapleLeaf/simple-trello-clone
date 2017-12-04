@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter, Link, Redirect, Route } from 'react-router-dom'
+import { ActiveBoardRoute } from '../ActiveBoardRoute'
 import { BoardListRoute } from '../BoardListRoute'
-import { BoardRoute } from '../BoardRoute'
 import { Container, Content, Footer, Header } from './styles'
 
 export class App extends React.Component {
@@ -17,7 +17,7 @@ export class App extends React.Component {
           <Content>
             <Route exact path="/" render={() => <Redirect to="/boards" push={false} />} />
             <Route exact path="/boards" component={BoardListRoute} />
-            <Route exact path="/board/:id" component={BoardRoute} />
+            <Route exact path="/board/:id" component={ActiveBoardRoute} />
           </Content>
           <Footer>&copy; kingdaro 2017 add github link here or something</Footer>
         </Container>

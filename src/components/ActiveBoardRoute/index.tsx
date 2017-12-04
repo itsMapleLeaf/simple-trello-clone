@@ -30,7 +30,7 @@ const storesToProps: StoreInjector<Props> = (stores, props) => {
 
 @inject(storesToProps)
 @observer
-export class BoardRoute extends React.Component<Props> {
+export class ActiveBoardRoute extends React.Component<Props> {
   render() {
     return <Container>{this.content}</Container>
   }
