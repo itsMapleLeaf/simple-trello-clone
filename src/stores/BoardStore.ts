@@ -18,5 +18,6 @@ export class BoardStore {
   async createBoard(title: string) {
     const board = new BoardModel(await generateRandomId(), title)
     this.addBoard(board)
+    return board
   }
 }

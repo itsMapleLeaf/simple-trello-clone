@@ -20,11 +20,14 @@ function render() {
 }
 
 async function main() {
-  await Promise.all([
-    stores.boardStore.createBoard('board1'),
-    stores.boardStore.createBoard('board2'),
-    stores.boardStore.createBoard('board3'),
-  ])
+  const testBoard = await stores.boardStore.createBoard('awesome test board')
+
+  const todo = await testBoard.createList('To Do')
+  await todo.createTask('cure cancer')
+  await todo.createTask('ponder the meaning of life')
+
+  const done = await testBoard.createList('Done')
+  await done.createTask('create a simple trello clone')
 
   useStrict(true)
   render()

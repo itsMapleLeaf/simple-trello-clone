@@ -1,3 +1,3 @@
 export class TaskModel {
-  constructor(public text: string) {}
+  constructor(public id: string, public text: string) {}
 }
