@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { ListModel } from '../../models/TaskListModel'
+import { TaskListModel } from '../../models/TaskListModel'
 import { Task } from '../Task'
 import { Container, Tasks, Title } from './styles'
 
 type Props = {
-  list: ListModel
+  list: TaskListModel
 }
 
 export function TaskList({ list }: Props) {
