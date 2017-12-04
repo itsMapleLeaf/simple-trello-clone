@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter, Link, Redirect, Route } from 'react-router-dom'
-import { ActiveBoardRoute } from '../ActiveBoardRoute'
-import { BoardListRoute } from '../BoardListRoute'
+import { ActiveBoardRoute } from '../../routes/ActiveBoardRoute'
+import { BoardListRoute } from '../../routes/BoardListRoute'
 import { Container, Content, Footer, Header } from './styles'
 
 export class App extends React.Component {

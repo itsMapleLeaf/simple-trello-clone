@@ -2,9 +2,9 @@ import { computed } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import { RouteComponentProps } from 'react-router'
+import { BoardView } from '../../components/BoardView'
 import { BoardModel } from '../../models/BoardModel'
 import { StoreInjector } from '../../stores'
-import { BoardView } from '../BoardView/index'
 import { Container } from './styles'
 
 type BoardRouteMatch = { id: string }
