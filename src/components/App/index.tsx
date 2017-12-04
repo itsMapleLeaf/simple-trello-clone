@@ -1,27 +1,8 @@
 import * as React from 'react'
 import { BrowserRouter, Link, Redirect, Route } from 'react-router-dom'
-import styled from 'styled-components'
 import { BoardListRoute } from '../BoardListRoute'
 import { BoardRoute } from '../BoardRoute'
-import { shadedSection } from './styles'
-
-const Container = styled.main`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-`
-
-const Header = styled.header`
-  ${shadedSection};
-`
-
-const Content = styled.section`
-  flex-grow: 1;
-`
-
-const Footer = styled.footer`
-  ${shadedSection};
-`
+import { Container, Content, Footer, Header } from './styles'
 
 export class App extends React.Component {
   render() {
