@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Delete } from '../../icons/Delete'
 import { TaskModel } from '../../models/TaskModel'
+import { Icon } from '../Icon'
 import { Container, DeleteAction, Text } from './styles'
 
 type Props = {
@@ -12,7 +12,7 @@ export function Task({ task }: Props) {
     <Container key={task.id}>
       <Text>{task.text}</Text>
       <DeleteAction>
-        <Delete size={24} />
+        <Icon name="trash" size="small" />
       </DeleteAction>
     </Container>
   )
