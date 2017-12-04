@@ -20,6 +20,8 @@ function render() {
 }
 
 async function main() {
+  useStrict(true)
+
   const testBoard = await stores.boardStore.createBoard('awesome test board')
 
   const todo = await testBoard.createList('To Do')
@@ -29,7 +31,6 @@ async function main() {
   const done = await testBoard.createList('Done')
   await done.createTask('create a simple trello clone')
 
-  useStrict(true)
   render()
   registerServiceWorker()
   applyGlobalStyles()
