@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
 import { BoardModel } from '../../models/BoardModel'
-import { Board } from './Board'
+import { BoardLink } from './BoardLink'
 import { BoardNew } from './BoardNew'
 import { Container } from './Container'
 
@@ -22,8 +22,8 @@ export class BoardList extends React.Component<BoardListProps> {
   }
 
   renderBoard = (board: BoardModel) => (
-    <Board to={`/board/${board.id}`} key={board.id}>
+    <BoardLink to={`/board/${board.id}`} key={board.id}>
       <h2>{board.name}</h2>
-    </Board>
+    </BoardLink>
   )
 }
