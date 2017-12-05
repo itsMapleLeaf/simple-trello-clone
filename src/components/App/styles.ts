@@ -1,10 +1,5 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import * as theme from '../../styles/theme'
-
-export const shadedSection = css`
-  ${theme.primaryAlt};
-  padding: 1rem;
-`
 
 export const Container = styled.main`
   min-height: 100vh;
@@ -13,7 +8,11 @@ export const Container = styled.main`
 `
 
 export const Header = styled.header`
-  ${shadedSection};
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ${theme.primaryAlt};
 `
 
 export const Content = styled.section`
@@ -21,6 +20,8 @@ export const Content = styled.section`
   flex-grow: 1;
 `
 
-export const Footer = styled.footer`
-  ${shadedSection};
+export const HeaderLinks = styled.nav`
+  a:hover {
+    text-decoration: underline;
+  }
 `
