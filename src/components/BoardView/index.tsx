@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
 import { BoardModel } from '../../models/BoardModel'
+import { QuickInput } from '../QuickInput'
 import { TaskList } from '../TaskList'
 import { TaskLists, Title } from './styles'
-import { QuickInput } from '../QuickInput/index'
 
 type Props = {
   board: BoardModel
