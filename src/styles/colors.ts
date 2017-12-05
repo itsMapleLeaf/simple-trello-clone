@@ -1,3 +1,4 @@
+// http://flatuicolors.com/
 export const blue = '#3498db'
 export const blueDark = '#2980b9'
 
