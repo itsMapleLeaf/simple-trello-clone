@@ -18,6 +18,8 @@ export class TaskListModel {
   }
 
   async createTask(text: string) {
+    if (text.trim() === '') return
+
     const id = await generateRandomId()
     const task = new TaskModel(id, text)
     this.addTask(task)
