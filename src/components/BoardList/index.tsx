@@ -2,9 +2,7 @@ import { observer } from 'mobx-react'
 import * as React from 'react'
 import { BoardModel } from '../../models/BoardModel'
 import { Icon } from '../Icon/index'
-import { BoardLink } from './BoardLink'
-import { BoardNew } from './BoardNew'
-import { Container } from './Container'
+import { BoardLink, BoardNew, Container } from './styles'
 
 type BoardListProps = {
   boards: BoardModel[]
