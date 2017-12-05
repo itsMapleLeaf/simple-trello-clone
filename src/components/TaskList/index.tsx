@@ -1,9 +1,9 @@
-import { action, observable } from 'mobx'
 import { observer } from 'mobx-react'
 import * as React from 'react'
 import { TaskListModel } from '../../models/TaskListModel'
+import { QuickInput } from '../QuickInput'
 import { Task } from '../Task'
-import { Container, NewTask, Tasks, Title } from './styles'
+import { Container, Tasks, Title } from './styles'
 
 type Props = {
   taskList: TaskListModel
@@ -13,25 +13,6 @@ type Props = {
 
 @observer
 export class TaskList extends React.Component<Props> {
-  @observable newTaskText = ''
-
-  @action
-  setNewTaskText(text: string) {
-    this.newTaskText = text
-  }
-
-  handleInput = (event: React.UIEvent<HTMLInputElement>) => {
-    this.setNewTaskText(event.currentTarget.value)
-  }
-
-  handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      event.preventDefault()
-      this.props.onNewTask(this.newTaskText)
-      this.setNewTaskText('')
-    }
-  }
-
   render() {
     const { taskList, onTaskRemoved } = this.props
     return (
@@ -39,12 +20,7 @@ export class TaskList extends React.Component<Props> {
         <Title>{taskList.name}</Title>
         <Tasks>
           {taskList.tasks.map(task => <Task key={task.id} task={task} onRemove={onTaskRemoved} />)}
-          <NewTask
-            placeholder="Add new task..."
-            value={this.newTaskText}
-            onInput={this.handleInput}
-            onKeyDown={this.handleKeyDown}
-          />
+          <QuickInput placeholder="Add new task..." onConfirm={this.props.onNewTask} />
         </Tasks>
       </Container>
     )

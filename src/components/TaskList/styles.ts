@@ -22,13 +22,3 @@ export const Tasks = styled.ul`
   display: flex;
   flex-direction: column;
 `
-
-export const NewTask = styled.input`
-  padding: 0.5rem;
-  border: none;
-
-  &:hover,
-  &:focus {
-    background: rgba(0, 0, 0, 0.1);
-  }
-`
