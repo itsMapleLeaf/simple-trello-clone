@@ -5,16 +5,6 @@ export const shadow = css`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 `
 
-export const background = css`
-  background-color: ${colors.blue};
-  color: ${colors.clouds};
-`
-
-export const backgroundAlt = css`
-  background-color: ${colors.blueDark};
-  color: ${colors.clouds};
-`
-
 export const foreground = css`
   background-color: ${colors.clouds};
   color: ${colors.asphaltDark};
@@ -23,4 +13,24 @@ export const foreground = css`
 export const foregroundAlt = css`
   background-color: ${colors.cloudsDark};
   color: ${colors.asphaltDark};
+`
+
+export const primary = css`
+  background-color: ${colors.blue};
+  color: ${colors.clouds};
+`
+
+export const primaryAlt = css`
+  background-color: ${colors.blueDark};
+  color: ${colors.clouds};
+`
+
+export const success = css`
+  background-color: ${colors.green};
+  color: ${colors.clouds};
+`
+
+export const successAlt = css`
+  background-color: ${colors.greenDark};
+  color: ${colors.clouds};
 `

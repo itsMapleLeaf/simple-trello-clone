@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import * as theme from '../../styles/theme'
 
 export const shadedSection = css`
-  ${theme.backgroundAlt};
+  ${theme.primaryAlt};
   padding: 1rem;
 `
 
@@ -17,7 +17,7 @@ export const Header = styled.header`
 `
 
 export const Content = styled.section`
-  ${theme.background};
+  ${theme.primary};
   flex-grow: 1;
 `
 
