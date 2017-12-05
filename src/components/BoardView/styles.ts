@@ -9,6 +9,7 @@ export const Title = styled.h2`
 export const TaskLists = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 
   margin: -0.5rem;
 
