@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
 import { BoardModel } from '../../models/BoardModel'
-import { QuickInput } from '../QuickInput'
+import { QuickInput } from '../QuickInput/index'
 import { TaskList } from '../TaskList'
 import { TaskLists, Title } from './styles'
 
@@ -24,6 +24,7 @@ export class BoardView extends React.Component<Props> {
               taskList={list}
               onNewTask={list.createTask.bind(list)}
               onTaskRemoved={list.removeTask.bind(list)}
+              onRemove={board.removeList.bind(board)}
             />
           ))}
           <QuickInput placeholder="Create new list..." onConfirm={this.props.onNewList} />

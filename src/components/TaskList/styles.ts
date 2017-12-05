@@ -8,6 +8,11 @@ export const Container = styled.article`
   ${theme.shadow};
 `
 
+export const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+`
+
 export const Title = styled.h3`
   text-align: center;
   margin-bottom: 0.5rem;
