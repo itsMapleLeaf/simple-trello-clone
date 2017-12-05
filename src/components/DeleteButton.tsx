@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { Icon } from './Icon/index'
 
 export const Wrapper = styled.a`
-  opacity: 0.5;
+  opacity: 0.25;
   transition: 0.2s opacity;
   cursor: pointer;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.5;
   }
 `
 
