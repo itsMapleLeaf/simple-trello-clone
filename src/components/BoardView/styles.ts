@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import { clouds } from '../../styles/colors'
 
 export const Title = styled.h2`
   margin-bottom: 1rem;
+  color: ${clouds};
 `
 
 export const TaskLists = styled.div`

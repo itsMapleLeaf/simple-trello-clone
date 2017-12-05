@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { asphaltDark, clouds } from '../../styles/colors'
+import * as colors from '../../styles/colors'
+import * as theme from '../../styles/theme'
 
 export const Container = styled.article`
   width: 16rem;
-  /* min-height: 10rem; */
   padding: 0.5rem;
-  background-color: ${asphaltDark};
-  color: ${clouds};
+  ${colors.foregroundAlt};
+  ${theme.shadow};
 `
 
 export const Title = styled.h3`

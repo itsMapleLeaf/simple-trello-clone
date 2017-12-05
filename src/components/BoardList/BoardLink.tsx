@@ -4,5 +4,4 @@ import { boardStyles } from './styles'
 
 export const BoardLink = styled(Link)`
   ${boardStyles};
-  display: block;
 `

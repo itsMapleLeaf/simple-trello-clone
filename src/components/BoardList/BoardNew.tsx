@@ -1,14 +1,16 @@
 import styled from 'styled-components'
-import { flexCenter } from '../../styles/helpers'
+import { background, backgroundAlt, green, greenDark } from '../../styles/colors'
 import { boardStyles } from './styles'
 
 export const BoardNew = styled.a`
   ${boardStyles};
-  ${flexCenter};
+  ${background};
 
-  background: #2ecc71;
+  background: ${green};
+  font-weight: 500;
 
   &:hover {
-    background: #27ae60;
+    ${backgroundAlt};
+    background: ${greenDark};
   }
 `

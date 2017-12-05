@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
 import { BoardModel } from '../../models/BoardModel'
+import { Icon } from '../Icon/index'
 import { BoardLink } from './BoardLink'
 import { BoardNew } from './BoardNew'
 import { Container } from './Container'
@@ -16,7 +17,10 @@ export class BoardList extends React.Component<BoardListProps> {
     return (
       <Container>
         {this.props.boards.map(this.renderBoard)}
-        <BoardNew onClick={this.props.onNewBoard}>Create New Board...</BoardNew>
+        <BoardNew onClick={this.props.onNewBoard}>
+          <Icon name="add" size="small" />
+          Create New Board...
+        </BoardNew>
       </Container>
     )
   }

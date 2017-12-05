@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
+import { background, backgroundAlt } from '../../styles/colors'
 
 export const shadedSection = css`
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  ${backgroundAlt};
   padding: 1rem;
 `
 
@@ -17,6 +17,7 @@ export const Header = styled.header`
 `
 
 export const Content = styled.section`
+  ${background};
   flex-grow: 1;
 `
 

@@ -1,8 +1,10 @@
 import styled from 'styled-components'
-import { asphalt } from '../../styles/colors'
+import * as colors from '../../styles/colors'
+import * as theme from '../../styles/theme'
 
 export const Container = styled.li`
-  background-color: ${asphalt};
+  ${colors.foreground};
+  ${theme.shadow};
   display: flex;
   align-items: center;
 
