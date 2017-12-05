@@ -17,3 +17,13 @@ export const TaskLists = styled.div`
     margin: 0.5rem;
   }
 `
+
+export const TaskListNew = styled.input`
+  padding: 0.5rem;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background: rgba(0, 0, 0, 0.1);
+  }
+`
