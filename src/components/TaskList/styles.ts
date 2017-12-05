@@ -14,7 +14,21 @@ export const Title = styled.h3`
 `
 
 export const Tasks = styled.ul`
-  > * + * {
-    margin-top: 0.5rem;
+  margin: -0.25rem;
+  > * {
+    margin: 0.25rem;
+  }
+
+  display: flex;
+  flex-direction: column;
+`
+
+export const NewTask = styled.input`
+  padding: 0.5rem;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background: rgba(0, 0, 0, 0.1);
   }
 `
