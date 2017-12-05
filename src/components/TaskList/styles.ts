@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import * as colors from '../../styles/colors'
 import * as theme from '../../styles/theme'
 
 export const Container = styled.article`
   width: 16rem;
   padding: 0.5rem;
-  ${colors.foregroundAlt};
+  ${theme.foregroundAlt};
   ${theme.shadow};
 `
 

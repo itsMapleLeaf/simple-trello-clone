@@ -1,12 +1,11 @@
 import { css } from 'styled-components'
-import { foreground, foregroundAlt } from '../../styles/colors'
-import { flexCenter } from '../../styles/helpers'
-import { shadow } from '../../styles/theme'
+import * as helpers from '../../styles/helpers'
+import * as theme from '../../styles/theme'
 
 export const boardStyles = css`
-  ${foreground};
-  ${flexCenter};
-  ${shadow};
+  ${theme.foreground};
+  ${theme.shadow};
+  ${helpers.flexCenter};
 
   width: 16em;
   height: 4em;
@@ -15,7 +14,7 @@ export const boardStyles = css`
   transition: 0.2s background-color;
 
   &:hover {
-    ${foregroundAlt};
+    ${theme.foregroundAlt};
     cursor: pointer;
   }
 `

@@ -1,16 +1,17 @@
 import styled from 'styled-components'
-import { background, backgroundAlt, green, greenDark } from '../../styles/colors'
+import * as colors from '../../styles/colors'
+import * as theme from '../../styles/theme'
 import { boardStyles } from './styles'
 
 export const BoardNew = styled.a`
   ${boardStyles};
-  ${background};
+  ${theme.background};
 
-  background: ${green};
+  background: ${colors.green};
   font-weight: 500;
 
   &:hover {
-    ${backgroundAlt};
-    background: ${greenDark};
+    ${theme.backgroundAlt};
+    background: ${colors.greenDark};
   }
 `

@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import * as colors from '../../styles/colors'
 import * as theme from '../../styles/theme'
 
 export const Container = styled.li`
-  ${colors.foreground};
+  ${theme.foreground};
   ${theme.shadow};
   display: flex;
   align-items: center;
