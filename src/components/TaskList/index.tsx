@@ -1,13 +1,13 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
-import { TaskListModel } from '../../store.new'
+import { TaskListModel } from '../../models'
 import { DeleteButton } from '../DeleteButton'
 import { QuickInput } from '../QuickInput'
 import { Task } from '../Task'
 import { Container, Header, Tasks, Title } from './styles'
 
 type Props = {
-  taskList: (typeof TaskListModel.Type)
+  taskList: typeof TaskListModel.Type
   onNewTask: (text: string) => void
   onTaskRemoved: (id: string) => void
   onRemove: (id: string) => void

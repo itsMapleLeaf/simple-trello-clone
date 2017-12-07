@@ -1,7 +1,7 @@
 import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import { BoardList } from '../../components/BoardList'
-import { BoardModel } from '../../store.new'
+import { BoardModel } from '../../models'
 import { StoreInjector } from '../../stores'
 
 interface Props {

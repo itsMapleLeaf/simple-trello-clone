@@ -1,7 +1,7 @@
-import { Store } from './store.new'
+import { BoardStore } from './models'
 
 // mock store
-const store = Store.create({
+const boardStore = BoardStore.create({
   boards: {
     cb64e29c52e12c49: {
       id: 'cb64e29c52e12c49',
@@ -26,7 +26,7 @@ const store = Store.create({
 })
 
 export const stores = {
-  boardStore: store,
+  boardStore,
 }
 
 export type Stores = typeof stores

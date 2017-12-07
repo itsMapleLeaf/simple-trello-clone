@@ -1,12 +1,12 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
-import { BoardModel } from '../../store.new'
+import { BoardModel } from '../../models'
 import { QuickInput } from '../QuickInput/index'
 import { TaskList } from '../TaskList'
 import { TaskLists, Title } from './styles'
 
 type Props = {
-  board: (typeof BoardModel.Type)
+  board: typeof BoardModel.Type
   onNewList: (name: string) => void
 }
 

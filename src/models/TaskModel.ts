@@ -1,3 +1,6 @@
-export class TaskModel {
-  constructor(public id: string, public text: string) {}
-}
+import { types } from 'mobx-state-tree'
+
+export const TaskModel = types.model({
+  id: types.string,
+  text: types.string,
+})

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
-import { BoardModel } from '../../store.new'
+import { BoardModel } from '../../models'
 import { Icon } from '../Icon/index'
 import { BoardLink, BoardNew, Container } from './styles'
 

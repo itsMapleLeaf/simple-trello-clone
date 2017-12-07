@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { TaskModel } from '../../store.new'
+import { TaskModel } from '../../models'
 import { DeleteButton } from '../DeleteButton'
 import { Icon } from '../Icon'
 import { Container, Text } from './styles'
 
 type Props = {
-  task: (typeof TaskModel.Type)
+  task: typeof TaskModel.Type
   onRemove: (id: string) => void
 }
 

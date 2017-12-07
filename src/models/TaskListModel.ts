@@ -1,28 +1,28 @@
-import { action, observable } from 'mobx'
+import { flow, types } from 'mobx-state-tree'
 import { generateRandomId } from '../helpers/generateRandomId'
 import { TaskModel } from './TaskModel'
 
-export class TaskListModel {
-  tasks = observable.array<TaskModel>()
+export const TaskListModel = types
+  .model({
+    id: types.string,
+    name: types.string,
+    tasks: types.array(TaskModel),
+  })
+  .actions(self => {
+    function rename(name: string) {
+      self.name = name
+    }
 
-  constructor(public id: string, public name: string) {}
+    const createTask = flow(function*(text: string) {
+      const id: string = yield generateRandomId()
+      const task = TaskModel.create({ id, text })
+      self.tasks.push(task)
+      return task
+    })
 
-  @action
-  addTask(task: TaskModel) {
-    this.tasks.push(task)
-  }
+    function removeTask(id: string) {
+      self.tasks.replace(self.tasks.filter(task => task.id !== id))
+    }
 
-  @action
-  removeTask(id: string) {
-    this.tasks.replace(this.tasks.filter(task => task.id !== id))
-  }
-
-  async createTask(text: string) {
-    if (text.trim() === '') return
-
-    const id = await generateRandomId()
-    const task = new TaskModel(id, text)
-    this.addTask(task)
-    return task
-  }
-}
+    return { rename, createTask, removeTask }
+  })

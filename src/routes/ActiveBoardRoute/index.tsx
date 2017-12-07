@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { BoardView } from '../../components/BoardView'
-import { BoardModel } from '../../store.new'
+import { BoardModel } from '../../models'
 import { StoreInjector } from '../../stores'
 import { Container } from './styles'
 
