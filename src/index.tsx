@@ -24,11 +24,7 @@ function render() {
   ReactDOM.render(root, document.getElementById('root') as HTMLElement)
 }
 
-async function main() {
-  registerServiceWorker()
-  applyGlobalStyles()
-  render()
-
+async function initPersistence() {
   const persistence = createPersistence('boards')
   addMiddleware(stores.boardStore, persistence.middleware)
 
@@ -39,6 +35,13 @@ async function main() {
     console.warn('Applying default data')
     applySnapshot(stores.boardStore, defaultData)
   }
+}
+
+async function main() {
+  registerServiceWorker()
+  applyGlobalStyles()
+  render()
+  await initPersistence()
 
   if (process.env.NODE_ENV !== 'production') {
     if (module.hot) {
