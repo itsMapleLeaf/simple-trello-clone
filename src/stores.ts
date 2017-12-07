@@ -1,29 +1,6 @@
 import { BoardStore } from './models'
 
-// mock store
-const boardStore = BoardStore.create({
-  boards: {
-    cb64e29c52e12c49: {
-      id: 'cb64e29c52e12c49',
-      name: 'awesome test board',
-      lists: [
-        {
-          id: '7e931bb7f06b41e6',
-          name: 'To Do',
-          tasks: [
-            { id: '7ae2ac4a31f5457f', text: 'cure cancer' },
-            { id: '1ac101ad75f1b479', text: 'ponder the meaning of life' },
-          ],
-        },
-        {
-          id: '9e6cc070340b1410',
-          name: 'Done',
-          tasks: [{ id: 'be337d7fc8acfd12', text: 'create a simple trello clone' }],
-        },
-      ],
-    },
-  },
-})
+const boardStore = BoardStore.create({ boards: {} })
 
 export const stores = {
   boardStore,
