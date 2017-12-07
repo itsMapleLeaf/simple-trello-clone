@@ -1,11 +1,11 @@
-import { createBrowserHistory } from 'history'
+import createHashHistory from 'history/createHashHistory'
 import { BoardStore } from './models'
 
 const boardStore = BoardStore.create({ boards: {} })
 
 export const stores = {
   boardStore,
-  history: createBrowserHistory({ basename: '/trello' }),
+  history: createHashHistory(),
 }
 
 export type Stores = typeof stores
