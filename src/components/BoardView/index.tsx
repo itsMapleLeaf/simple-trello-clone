@@ -17,6 +17,7 @@ const storesToProps: StoreInjector<Props> = (stores, props) => {
   return {
     onRemove() {
       stores.boardStore.removeBoard(props.board.id)
+      stores.history.push('/')
     },
   }
 }
