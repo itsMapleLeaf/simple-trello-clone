@@ -3,7 +3,7 @@ import { generateRandomId } from '../helpers/generateRandomId'
 import { TaskModel } from './TaskModel'
 
 export class TaskListModel {
-  @observable tasks = [] as TaskModel[]
+  tasks = observable.array<TaskModel>()
 
   constructor(public id: string, public name: string) {}
 
@@ -14,7 +14,7 @@ export class TaskListModel {
 
   @action
   removeTask(id: string) {
-    this.tasks = this.tasks.filter(task => task.id !== id)
+    this.tasks.replace(this.tasks.filter(task => task.id !== id))
   }
 
   async createTask(text: string) {
