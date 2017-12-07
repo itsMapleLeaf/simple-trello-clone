@@ -5,7 +5,7 @@ const boardStore = BoardStore.create({ boards: {} })
 
 export const stores = {
   boardStore,
-  history: createBrowserHistory(),
+  history: createBrowserHistory({ basename: '/trello' }),
 }
 
 export type Stores = typeof stores
