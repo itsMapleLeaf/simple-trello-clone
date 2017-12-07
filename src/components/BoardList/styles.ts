@@ -6,14 +6,16 @@ import * as theme from '../../styles/theme'
 export const boardStyles = css`
   ${theme.foreground};
   ${theme.shadow};
-  ${theme.transition('background-color')} ${helpers.flexCenter};
+  ${theme.transition('background-color')};
+  ${helpers.flexCenter};
 
   width: 16rem;
   height: 4rem;
   padding: 1rem;
   font-weight: 500;
 
-  &:hover {
+  &:hover,
+  &:focus {
     ${theme.foregroundAlt};
     cursor: pointer;
   }
@@ -23,13 +25,15 @@ export const BoardLink = styled(Link)`
   ${boardStyles};
 `
 
-export const BoardNew = styled.a`
+export const BoardNew = styled.button`
   ${boardStyles};
   ${theme.success};
 
   font-weight: 500;
+  border: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     ${theme.successAlt};
   }
 `

@@ -20,7 +20,8 @@ export const DeleteBoardButton = styled.button`
   padding: 0.5rem;
   border: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     ${theme.dangerAlt};
     cursor: pointer;
   }
