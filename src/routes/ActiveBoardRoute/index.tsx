@@ -3,14 +3,14 @@ import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { BoardView } from '../../components/BoardView'
-import { BoardModel } from '../../models/BoardModel'
+import { BoardModel } from '../../store.new'
 import { StoreInjector } from '../../stores'
 import { Container } from './styles'
 
 type BoardRouteMatch = { id: string }
 
 type Props = RouteComponentProps<BoardRouteMatch> & {
-  board?: BoardModel
+  board?: typeof BoardModel.Type
 }
 
 const storesToProps: StoreInjector<Props> = (stores, props) => {

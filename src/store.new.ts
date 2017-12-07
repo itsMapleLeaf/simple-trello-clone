@@ -1,16 +1,16 @@
 import { flow, types } from 'mobx-state-tree'
 import { generateRandomId } from './helpers/generateRandomId'
 
-export const Task = types.model({
+export const TaskModel = types.model({
   id: types.string,
   text: types.string,
 })
 
-export const TaskList = types
+export const TaskListModel = types
   .model({
     id: types.string,
     name: types.string,
-    tasks: types.array(Task),
+    tasks: types.array(TaskModel),
   })
   .actions(self => {
     function rename(name: string) {
@@ -19,7 +19,7 @@ export const TaskList = types
 
     const createTask = flow(function*(text: string) {
       const id: string = yield generateRandomId()
-      const task = Task.create({ id, text })
+      const task = TaskModel.create({ id, text })
       self.tasks.push(task)
       return task
     })
@@ -31,11 +31,11 @@ export const TaskList = types
     return { rename, createTask, removeTask }
   })
 
-export const Board = types
+export const BoardModel = types
   .model({
     id: types.string,
     name: types.string,
-    lists: types.array(TaskList),
+    lists: types.array(TaskListModel),
   })
   .actions(self => {
     function rename(name: string) {
@@ -44,7 +44,7 @@ export const Board = types
 
     const createList = flow(function* (name: string) {
       const id: string = yield generateRandomId()
-      const list = TaskList.create({ id, name, tasks: [] })
+      const list = TaskListModel.create({ id, name, tasks: [] })
       self.lists.push(list)
       return list
     })
@@ -58,11 +58,11 @@ export const Board = types
 
 export const Store = types
   .model({
-    boards: types.map(Board),
+    boards: types.map(BoardModel),
   })
   .actions(self => {
     const createBoard = flow(function* (name: string) {
-      const board = Board.create({ id: yield generateRandomId(), name, lists: [] })
+      const board = BoardModel.create({ id: yield generateRandomId(), name, lists: [] })
       self.boards.set(board.id, board)
       return board
     })

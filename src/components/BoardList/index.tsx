@@ -1,11 +1,11 @@
 import { observer } from 'mobx-react'
 import * as React from 'react'
-import { BoardModel } from '../../models/BoardModel'
+import { BoardModel } from '../../store.new'
 import { Icon } from '../Icon/index'
 import { BoardLink, BoardNew, Container } from './styles'
 
 type BoardListProps = {
-  boards: BoardModel[]
+  boards: (typeof BoardModel.Type)[]
   onNewBoard?: () => void
 }
 
@@ -23,7 +23,7 @@ export class BoardList extends React.Component<BoardListProps> {
     )
   }
 
-  renderBoard = (board: BoardModel) => (
+  renderBoard = (board: typeof BoardModel.Type) => (
     <BoardLink to={`/board/${board.id}`} key={board.id}>
       <h2>{board.name}</h2>
     </BoardLink>

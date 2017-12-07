@@ -1,11 +1,11 @@
 import { inject, observer } from 'mobx-react'
 import * as React from 'react'
 import { BoardList } from '../../components/BoardList'
-import { BoardModel } from '../../models/BoardModel'
+import { BoardModel } from '../../store.new'
 import { StoreInjector } from '../../stores'
 
 interface Props {
-  boards?: BoardModel[]
+  boards?: (typeof BoardModel.Type)[]
   onNewBoard?: () => void
 }
 
