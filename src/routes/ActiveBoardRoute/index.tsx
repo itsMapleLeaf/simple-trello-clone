@@ -31,6 +31,6 @@ export class ActiveBoardRoute extends React.Component<Props> {
     if (board) {
       return <BoardView board={board} onNewList={board.createList.bind(board)} />
     }
-    return <h1>board not found</h1>
+    return <h2>board not found</h2>
   }
 }
