@@ -2,12 +2,13 @@ import { action, observable } from 'mobx'
 import { observer } from 'mobx-react'
 import * as React from 'react'
 import styled from 'styled-components'
+import { transition } from '../../styles/theme'
 
 const Input = styled.input`
   padding: 0.5rem;
   border: none;
   background: rgba(0, 0, 0, 0.1);
-
+  ${transition('background-color')};
   &:hover,
   &:focus {
     background: rgba(0, 0, 0, 0.2);

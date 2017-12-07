@@ -15,10 +15,10 @@ export const Title = styled.h2`
 export const DeleteBoardButton = styled.button`
   ${theme.danger};
   ${theme.shadow};
+  ${theme.transition()};
   font-size: 1rem;
   padding: 0.5rem;
   border: none;
-  transition: 0.2s;
 
   &:hover {
     ${theme.dangerAlt};

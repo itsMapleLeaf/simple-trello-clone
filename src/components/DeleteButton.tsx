@@ -1,10 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { transition } from '../styles/theme'
 import { Icon } from './Icon/index'
 
 export const Wrapper = styled.a`
-  opacity: 0.25;
-  transition: 0.2s opacity;
+  ${transition('opacity')} opacity: 0.25;
   cursor: pointer;
 
   &:hover {

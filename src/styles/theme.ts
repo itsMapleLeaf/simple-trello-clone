@@ -5,6 +5,10 @@ export const shadow = css`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 `
 
+export const transition = (...properties: string[]) => css`
+  transition: 0.2s ${properties.join(' ')};
+`
+
 export const foreground = css`
   background-color: ${colors.clouds};
   color: ${colors.asphaltDark};

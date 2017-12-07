@@ -6,13 +6,12 @@ import * as theme from '../../styles/theme'
 export const boardStyles = css`
   ${theme.foreground};
   ${theme.shadow};
-  ${helpers.flexCenter};
+  ${theme.transition('background-color')} ${helpers.flexCenter};
 
   width: 16rem;
   height: 4rem;
   padding: 1rem;
   font-weight: 500;
-  transition: 0.2s background-color;
 
   &:hover {
     ${theme.foregroundAlt};
