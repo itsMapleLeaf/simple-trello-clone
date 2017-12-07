@@ -34,3 +34,13 @@ export const successAlt = css`
   background-color: ${colors.greenDark};
   color: ${colors.clouds};
 `
+
+export const danger = css`
+  background-color: ${colors.red};
+  color: ${colors.clouds};
+`
+
+export const dangerAlt = css`
+  background-color: ${colors.redDark};
+  color: ${colors.clouds};
+`

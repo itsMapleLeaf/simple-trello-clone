@@ -10,3 +10,6 @@ export const asphaltDark = '#2c3e50'
 
 export const clouds = '#ecf0f1'
 export const cloudsDark = '#dae0e4'
+
+export const red = '#e74c3c'
+export const redDark = '#c0392b'

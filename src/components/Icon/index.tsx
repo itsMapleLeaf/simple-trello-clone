@@ -11,17 +11,18 @@ type Props = {
 }
 
 const sizes = {
-  small: 24,
-  normal: 36,
-  large: 48,
+  text: '1em',
+  small: '24px',
+  normal: '36px',
+  large: '48px',
 }
 
 const resolveSize = (props: Props) => sizes[props.size || 'normal']
 
 const Wrapper = styled.span`
   svg {
-    width: ${resolveSize}px;
-    height: ${resolveSize}px;
+    width: ${resolveSize};
+    height: ${resolveSize};
   }
 `
 
