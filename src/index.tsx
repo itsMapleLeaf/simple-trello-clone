@@ -4,6 +4,7 @@ import { Provider as StoreProvider } from 'mobx-react'
 import { addMiddleware, applySnapshot } from 'mobx-state-tree'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import { Router } from 'react-router-dom'
 import { App } from './components/App'
 import { createPersistence } from './helpers/persistence'
 import { defaultData } from './models'
@@ -13,9 +14,11 @@ import { applyGlobalStyles } from './styles/globalStyles'
 
 function render() {
   const root = (
-    <StoreProvider {...stores}>
-      <App />
-    </StoreProvider>
+    <Router history={stores.history}>
+      <StoreProvider {...stores}>
+        <App />
+      </StoreProvider>
+    </Router>
   )
 
   ReactDOM.render(root, document.getElementById('root') as HTMLElement)
