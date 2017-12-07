@@ -1,4 +1,4 @@
-import { flow, types } from 'mobx-state-tree'
+import { types } from 'mobx-state-tree'
 import { generateRandomId } from '../helpers/generateRandomId'
 import { BoardModel } from './BoardModel'
 
@@ -7,11 +7,11 @@ export const BoardStore = types
     boards: types.map(BoardModel),
   })
   .actions(self => {
-    const createBoard = flow(function*(name: string) {
-      const board = BoardModel.create({ id: yield generateRandomId(), name, lists: [] })
+    function createBoard(name: string) {
+      const board = BoardModel.create({ id: generateRandomId(), name, lists: [] })
       self.boards.set(board.id, board)
       return board
-    })
+    }
 
     function removeBoard(id: string) {
       self.boards.delete(id)

@@ -1,4 +1,4 @@
-import { flow, types } from 'mobx-state-tree'
+import { types } from 'mobx-state-tree'
 import { generateRandomId } from '../helpers/generateRandomId'
 import { TaskModel } from './TaskModel'
 
@@ -13,12 +13,12 @@ export const TaskListModel = types
       self.name = name
     }
 
-    const createTask = flow(function*(text: string) {
-      const id: string = yield generateRandomId()
+    function createTask(text: string) {
+      const id = generateRandomId()
       const task = TaskModel.create({ id, text })
       self.tasks.push(task)
       return task
-    })
+    }
 
     function removeTask(id: string) {
       self.tasks.replace(self.tasks.filter(task => task.id !== id))

@@ -1,4 +1,4 @@
-import { flow, types } from 'mobx-state-tree'
+import { types } from 'mobx-state-tree'
 import { generateRandomId } from '../helpers/generateRandomId'
 import { TaskListModel } from './TaskListModel'
 
@@ -13,12 +13,12 @@ export const BoardModel = types
       self.name = name
     }
 
-    const createList = flow(function*(name: string) {
-      const id: string = yield generateRandomId()
+    function createList(name: string) {
+      const id = generateRandomId()
       const list = TaskListModel.create({ id, name, tasks: [] })
       self.lists.push(list)
       return list
-    })
+    }
 
     function removeList(id: string) {
       self.lists.replace(self.lists.filter(lists => lists.id !== id))
