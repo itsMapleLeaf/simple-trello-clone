@@ -42,14 +42,6 @@ async function main() {
   applyGlobalStyles()
   render()
   await initPersistence()
-
-  if (process.env.NODE_ENV !== 'production') {
-    if (module.hot) {
-      module.hot.accept('./components/App', render)
-    }
-
-    ;(window as any).stores = stores
-  }
 }
 
 main().catch(console.error)
